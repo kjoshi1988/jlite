@@ -1,0 +1,19 @@
+{
+  "name": "jlite",
+  "version": "0.0.1",
+  "description": "A small wrapper over vanilla javascript for better DOM manipulation.",
+  "main": "./src/jlite.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjoshi1988/jlite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kjoshi1988/jlite/issues"
+  },
+  "homepage": "https://github.com/kjoshi1988/jlite#readme"
+}

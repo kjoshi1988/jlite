@@ -101,7 +101,7 @@
     function initDomReady() {
         var evQ = [], init = false, mod = !!doc.addEventListener;
         var domRdyEv = function () {
-            if (mod || doc.readyState == "interactive") {
+            if (mod || doc.readyState === "interactive") {
                 init = true;
                 while (evQ.length > 0) evQ.splice(0, 1)[0]();
                 removeEvent(doc, "DOMContentLoaded", domRdyEv, false);
@@ -149,9 +149,9 @@
             var _o = new Obj(), _c, i, _e;
             if (!!ele) {
                 if (typeof ele == "string") {
-                    if (ele.indexOf("#") == 0) {
+                    if (ele.indexOf("#") === 0) {
                         _o.__children.push(doc.getElementById(ele.substring(1)));
-                    } else if (ele.indexOf(".") == 0) {
+                    } else if (ele.indexOf(".") === 0) {
                         _c = document.getElementsByClassName(ele.substring(1));
                         if (!!_c && _c.length > 0) {
                             for (i = 0; i < _c.length; i++) {
@@ -305,10 +305,10 @@
         Obj.prototype.data = function () {
             var _args = arguments;
             if (arguments.length > 0) {
-                if (arguments.length == 1) {
+                if (arguments.length === 1) {
                     var ele = this.get(0);
                     return !!ele ? ele.getAttribute("data-" + _args[0]) : undefined;
-                } else if (arguments.length == 2) {
+                } else if (arguments.length === 2) {
                     this.each(function () {
                         this.setAttribute("data-" + _args[0], _args[1]);
                     });
@@ -324,12 +324,12 @@
          */
         Obj.prototype.html = function () {
             var ele, _args = arguments;
-            if (_args.length == 1) {
+            if (_args.length === 1) {
                 this.each(function () {
                     this.innerHTML = _args[0];
                 });
                 return this;
-            } else if (_args.length == 0) {
+            } else if (_args.length === 0) {
                 ele = this.get(0);
                 if (!!ele) {
                     return !!ele && ele.innerHTML;
@@ -444,7 +444,7 @@
 $.extend.css = function(){
     var _o, _args = arguments;
     if(_args.length > 0){
-        if (_args.length == 1) {
+        if (_args.length === 1) {
             _o = _args[0];
             if(typeof _o === "string"){
                 return this.get(0) && this.get(0).style[_args[0]];
@@ -459,7 +459,7 @@ $.extend.css = function(){
                     }
                 }
             }
-        } else if(_args.length == 2){
+        } else if(_args.length === 2){
             this.each(function(){
                 this.style[_args[0]] = _args[1];
             });
