@@ -1,6 +1,6 @@
 {
   "name": "jlite",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A small wrapper over vanilla javascript for better DOM manipulation.",
   "main": "./src/jlite.js",
   "scripts": {

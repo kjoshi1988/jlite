@@ -99,8 +99,8 @@
      * @return {Function}
      */
     function initDomReady() {
-        var evQ = [], init = false, mod = !!doc.addEventListener;
-        var domRdyEv = function () {
+        let evQ = [], init = false, mod = !!doc.addEventListener;
+        let domRdyEv = function () {
             if (mod || doc.readyState === "interactive") {
                 init = true;
                 while (evQ.length > 0) evQ.splice(0, 1)[0]();
@@ -247,8 +247,8 @@
          * @return {Obj}
          */
         Obj.prototype.addEvent = function (evName, evFn, capture) {
-            this.each(function () {
-                addEvent(this, evName, evFn, capture);
+            this.each(function (ele) {
+                addEvent(ele, evName, evFn, capture);
             });
             return this;
         };
