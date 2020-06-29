@@ -247,8 +247,8 @@
          * @return {Obj}
          */
         Obj.prototype.addEvent = function (evName, evFn, capture) {
-            this.each(function (ele) {
-                addEvent(ele, evName, evFn, capture);
+            this.each(function () {
+                addEvent(this, evName, evFn, capture);
             });
             return this;
         };
